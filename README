@@ -1,0 +1,26 @@
+ICS for the Motorola A953 (Android 4.0.4 CM9) base on tpruvot/android_device_motorola_jordan
+
+
+Download:
+=========
+
+repo init -u git://github.com/anto/android.git -b ics
+
+repo sync -j 16
+
+
+Download RomManager (DELETED BY OUR BUILD SYSTEM)
+=================================================
+
+mkdir -p vendor/cm/proprietary
+cd vendor/cm && ./get-prebuilts
+
+
+Build:
+======
+
+rm -rf out/target
+
+source build/envsetup.sh && brunch A953
+
+Use the signed zip to update the defy with the bootmenu recovery, not the ota package !
